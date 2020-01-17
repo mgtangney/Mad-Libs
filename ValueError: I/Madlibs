@@ -1,0 +1,45 @@
+import re
+
+#create file object to read madlib.txt
+inputFile = open('madlibs.txt', 'r')
+content = inputFile.read ()
+inputFile.close()
+
+
+outputFile = open('madlibsresult.txt', 'w')
+
+#read contents of inputFile into a string
+for word in inputFile:
+    print(word)
+
+adjRegex = re.compile(r'ADJECTIVE')
+nounRegex = re.compile(r'NOUN')
+verbRegex = re.compile(r'VERB')
+
+adjSearch = adjSearch.search(madlibs[0])
+nounSearch = nounSearch.search(madlibs[0])
+verbSearch = verbSearch.search(madlibs[0])
+
+while True:
+    if adjSearch:
+        adjRegex = re.compile(r'ADJECTIVE')
+        print ("Enter an adjective. ")
+        adjInput = input ()
+        originalstring = adjRegex.sub(adjInput, originalstring, count=1)
+
+    if nounSearch:
+        nounRegex = re.compile(r'NOUN')
+        print ("Enter an noun. ")
+        nounInput = input ()
+        originalstring = nounRegex.sub(nounInput, originalstring, count=1)
+
+    if verbSearch:
+        verbRegex = re.compile(r'VERB')
+        print ("Enter an verb. ")
+        verbInput = input ()
+        originalstring = verbRegex.sub(verbInput, originalstring, count=1)
+        
+print(madlibs)
+
+outputFile.close()
+
